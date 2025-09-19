@@ -16,4 +16,4 @@ After logging in successfully, the device will be automatically import to Home A
 
 After a PowerZCST account login and its user configuration are completed, you can continue to add other PowerZCST accounts in the configured PowerZCST Integration page.
 
-Method: Settings > Devices & services > Configured > Xiaomi Home > ADD ITEM > Sign in with PowerZCST account
+Method: Settings > Devices & services > Configured > PowerZCST > ADD ITEM > Sign in with PowerZCST account
