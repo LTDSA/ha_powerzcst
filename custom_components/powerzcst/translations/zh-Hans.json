@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "连接到 PowerZCST",
+        "data": {
+          "username": "账号",
+          "password": "密码",
+          "endpoint": "服务器地址"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "连接失败",
+      "invalid_auth": "认证无效",
+      "unknown": "意外错误"
+    },
+    "abort": {
+      "already_configured": "设备已配置"
+    }
+  }
+}

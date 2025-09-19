@@ -1,0 +1,11 @@
+{
+  "domain": "powerzcst",
+  "name": "PowerZCST",
+  "version": "1.0.0",
+  "documentation": "https://github.com/LTDSA/ha_powerzcst/blob/main/README.md",
+  "dependencies": [],
+  "codeowners": ["@LTDSA"],
+  "requirements": [],
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}
