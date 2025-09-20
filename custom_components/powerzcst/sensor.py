@@ -30,7 +30,7 @@ from .const import (
     ATTR_BALANCE,
     ATTR_EXPECTED_REMAIN,
     ATTR_REMAIN,
-    ATTR_TODAY_USAGE,
+    ATTR_DAILY_USAGE,
     CONF_ENDPOINT,
     CONF_PASSWORD,
     CONF_USERNAME,
@@ -144,7 +144,7 @@ class PowerZCSTDataUpdateCoordinator(DataUpdateCoordinator):
                         ATTR_BALANCE: data.get("balance"),
                         ATTR_AVERAGE_USAGE: data.get("averageUsage"),
                         ATTR_EXPECTED_REMAIN: data.get("expectedRemain"),
-                        ATTR_TODAY_USAGE: data.get("todayUsage"),
+                        ATTR_DAILY_USAGE: data.get("dailyUsage"),
                         "device_name": device_name,
                         "room_name": room_name
                     }
@@ -176,7 +176,7 @@ class PowerZCSTSensor(CoordinatorEntity, SensorEntity):
             self._attr_native_unit_of_measurement = "kWh"
             self._attr_device_class = SensorDeviceClass.ENERGY
 
-            if sensor_type == ATTR_TODAY_USAGE:
+            if sensor_type == ATTR_DAILY_USAGE:
                 self._attr_state_class = SensorStateClass.TOTAL_INCREASING
             else:
                 self._attr_state_class = SensorStateClass.MEASUREMENT

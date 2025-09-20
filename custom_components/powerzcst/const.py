@@ -11,7 +11,7 @@ ATTR_REMAIN = "remain"
 ATTR_BALANCE = "balance"
 ATTR_AVERAGE_USAGE = "average_usage"
 ATTR_EXPECTED_REMAIN = "expected_remain"
-ATTR_TODAY_USAGE = "today_usage"
+ATTR_DAILY_USAGE = "daily_usage"
 
 SENSOR_TYPES = {
     ATTR_REMAIN: {
@@ -38,8 +38,8 @@ SENSOR_TYPES = {
         "unit": "days",
         "icon": "mdi:calendar-clock",
     },
-    ATTR_TODAY_USAGE: {
-        "name": "Today Usage",
+    ATTR_DAILY_USAGE: {
+        "name": "Daily Usage",
         "name_zh": "日电量",
         "unit": "kWh",
         "icon": "mdi:lightning-bolt",
