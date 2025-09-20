@@ -31,6 +31,7 @@ from .const import (
     ATTR_EXPECTED_REMAIN,
     ATTR_REMAIN,
     ATTR_DAILY_USAGE,
+    ATTR_STATUS,
     CONF_ENDPOINT,
     CONF_PASSWORD,
     CONF_USERNAME,
@@ -145,6 +146,7 @@ class PowerZCSTDataUpdateCoordinator(DataUpdateCoordinator):
                         ATTR_AVERAGE_USAGE: data.get("averageUsage"),
                         ATTR_EXPECTED_REMAIN: data.get("expectedRemain"),
                         ATTR_DAILY_USAGE: data.get("dailyUsage"),
+                        ATTR_STATUS: data.get("status"),
                         "device_name": device_name,
                         "room_name": room_name
                     }
@@ -201,4 +203,12 @@ class PowerZCSTSensor(CoordinatorEntity, SensorEntity):
         """Return the state of the sensor."""
         if self.coordinator.data is None:
             return None
+            
+        if self._sensor_type == ATTR_STATUS:
+            status_value = self.coordinator.data.get(self._sensor_type)
+            if status_value == 1:
+                return "联机"
+            else:
+                return "脱机"
+        
         return self.coordinator.data.get(self._sensor_type)

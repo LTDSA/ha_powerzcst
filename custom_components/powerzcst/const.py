@@ -12,6 +12,7 @@ ATTR_BALANCE = "balance"
 ATTR_AVERAGE_USAGE = "average_usage"
 ATTR_EXPECTED_REMAIN = "expected_remain"
 ATTR_DAILY_USAGE = "daily_usage"
+ATTR_STATUS = "status"
 
 SENSOR_TYPES = {
     ATTR_REMAIN: {
@@ -43,5 +44,11 @@ SENSOR_TYPES = {
         "name_zh": "日电量",
         "unit": "kWh",
         "icon": "mdi:lightning-bolt",
+    },
+    ATTR_STATUS: {
+        "name": "Device Status",
+        "name_zh": "设备状态",
+        "unit": None,
+        "icon": "mdi:lan-connect",
     }
 }
