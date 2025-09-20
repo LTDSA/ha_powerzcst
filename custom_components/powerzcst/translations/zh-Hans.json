@@ -14,7 +14,8 @@
       "cannot_connect": "连接失败",
       "invalid_auth": "认证无效",
       "unknown": "意外错误",
-      "api_error": "登录失败: {error_msg}"
+      "api_error": "登录失败: {error_msg}",
+      "already_exists": "该账号已被配置"
     },
     "abort": {
       "already_configured": "设备已配置"

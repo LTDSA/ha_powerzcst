@@ -73,7 +73,16 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         
         if user_input is not None:
             try:
-                info = await validate_input(self.hass, user_input)
+                # 检查是否已存在相同账号的配置
+                username = user_input[CONF_USERNAME]
+                for entry in self._async_current_entries():
+                    if entry.data.get(CONF_USERNAME) == username:
+                        errors["base"] = "already_exists"
+                        break
+                
+                # 如果没有相同账号的配置，继续验证
+                if not errors:
+                    info = await validate_input(self.hass, user_input)
             except CannotConnect:
                 errors["base"] = "cannot_connect"
             except InvalidAuth:
@@ -86,7 +95,8 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
-                return self.async_create_entry(title=info["title"], data=user_input)
+                if not errors:
+                    return self.async_create_entry(title=info["title"], data=user_input)
 
         return self.async_show_form(
             step_id="user", 
