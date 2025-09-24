@@ -32,6 +32,7 @@ from .const import (
     ATTR_REMAIN,
     ATTR_DAILY_USAGE,
     ATTR_STATUS,
+    ATTR_LINE_STATUS,
     CONF_ENDPOINT,
     CONF_PASSWORD,
     CONF_USERNAME,
@@ -147,6 +148,7 @@ class PowerZCSTDataUpdateCoordinator(DataUpdateCoordinator):
                         ATTR_EXPECTED_REMAIN: data.get("expectedRemain"),
                         ATTR_DAILY_USAGE: data.get("dailyUsage"),
                         ATTR_STATUS: data.get("status"),
+                        ATTR_LINE_STATUS: data.get("lineStatus"),
                         "device_name": device_name,
                         "room_name": room_name
                     }

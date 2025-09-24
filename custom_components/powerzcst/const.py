@@ -13,6 +13,7 @@ ATTR_AVERAGE_USAGE = "average_usage"
 ATTR_EXPECTED_REMAIN = "expected_remain"
 ATTR_DAILY_USAGE = "daily_usage"
 ATTR_STATUS = "status"
+ATTR_LINE_STATUS = "line_status"
 
 SENSOR_TYPES = {
     ATTR_REMAIN: {
@@ -50,5 +51,11 @@ SENSOR_TYPES = {
         "name_zh": "设备状态",
         "unit": None,
         "icon": "mdi:lan-connect",
+    },
+    ATTR_LINE_STATUS: {
+        "name": "Line Status",
+        "name_zh": "线路状态",
+        "unit": None,
+        "icon": "mdi:transmission-tower",
     }
 }
