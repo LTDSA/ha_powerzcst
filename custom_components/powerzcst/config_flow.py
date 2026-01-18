@@ -36,7 +36,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     password = data[CONF_PASSWORD]
     endpoint = data.get(CONF_ENDPOINT, DEFAULT_ENDPOINT)
     
-    login_url = f"{endpoint}/login/?username={username}&password={password}"
+    login_url = f"{endpoint}/my/login/?username={username}&password={password}"
     
     async with aiohttp.ClientSession() as session:
         try:

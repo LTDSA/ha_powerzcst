@@ -102,7 +102,7 @@ class PowerZCSTDataUpdateCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self) -> Dict[str, Any]:
         """Fetch data from API endpoint."""
         # Login first to get cookies
-        login_url = f"{self.endpoint}/login/?username={self.username}&password={self.password}"
+        login_url = f"{self.endpoint}/my/login/?username={self.username}&password={self.password}"
         
         try:
             async with self.session.get(login_url) as response:
@@ -119,7 +119,7 @@ class PowerZCSTDataUpdateCoordinator(DataUpdateCoordinator):
                 self.cookies = response.cookies
                 
                 # Now fetch the power data
-                balance_url = f"{self.endpoint}/electric/balance/?detail=1"
+                balance_url = f"{self.endpoint}/my/electric/balance/?detail=1"
                 
                 async with self.session.get(balance_url, cookies=self.cookies) as balance_response:
                     if balance_response.status != 200:
