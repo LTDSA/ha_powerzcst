@@ -1,7 +1,7 @@
 {
   "domain": "powerzcst",
   "name": "PowerZCST",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "documentation": "https://github.com/LTDSA/ha_powerzcst/blob/main/README.md",
   "issue_tracker": "https://github.com/LTDSA/ha_powerzcst/issues",
   "dependencies": [],
