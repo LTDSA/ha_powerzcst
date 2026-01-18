@@ -59,3 +59,7 @@ SENSOR_TYPES = {
         "icon": "mdi:transmission-tower",
     }
 }
+
+DEVICE_MANUFACTURERS = {
+    "DDS1351电控": "新开普",
+}

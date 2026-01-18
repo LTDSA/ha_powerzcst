@@ -39,6 +39,7 @@ from .const import (
     DEFAULT_ENDPOINT,
     DOMAIN,
     SENSOR_TYPES,
+    DEVICE_MANUFACTURERS,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -193,11 +194,14 @@ class PowerZCSTSensor(CoordinatorEntity, SensorEntity):
         
         self._attr_icon = SENSOR_TYPES[sensor_type]["icon"]
         
+        device_model = self.coordinator.data.get("device_name") if self.coordinator.data else "未知型号"
+        manufacturer = DEVICE_MANUFACTURERS.get(device_model, "PowerZCST")
+        
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry_id)},
             name=self.coordinator.data.get("room_name") if self.coordinator.data else f"未知房间",
-            manufacturer="PowerZCST",
-            model=self.coordinator.data.get("device_name") if self.coordinator.data else "未知型号",
+            manufacturer=manufacturer,
+            model=device_model,
         )
 
     @property
